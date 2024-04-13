@@ -1,6 +1,6 @@
 import random
 import requests
-from config import cfg
+from src.config import cfg
 
 
 def random_timeout():
