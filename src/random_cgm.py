@@ -33,4 +33,4 @@ if __name__ == "__main__":
     while True:
         update_value_command(server_address, key)
         # Wait for 5 seconds before updating again
-        time.sleep(5)
+        time.sleep(2)
