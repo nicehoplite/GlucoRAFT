@@ -17,6 +17,7 @@ def generate_random_value():
         level="Hyperglycemia"
     else:
         level="In Range"
+    return f"Current State: {level} with Blood Glucose: {x}"
      
 
 def update_value_command(addr, key):
@@ -27,7 +28,7 @@ def update_value_command(addr, key):
 if __name__ == "__main__":
     # Define the server address and key
     server_address = "http://127.0.0.1:8002" 
-    key = "Shreyas"
+    key = "PatientID-117"
 
     while True:
         update_value_command(server_address, key)
