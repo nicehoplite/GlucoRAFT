@@ -1,21 +1,57 @@
-
 # GlucoRAFT
-GlucoRAFT uses the RAFT algorithm to run servers for connecting T1D patient records and their endocrinologist with real time CGM updates. 
-If you want more context to this repo, here's my Medium article that explains RAFT and why this repo exists.
 
-I aim to model the RAFT algorithm's properties - leader elections, heartbeats, log updation and replication in a very simple skeletal as closely as possible in Python...sigh global interpreter lock say hi :) The implementation has been simplified here for open sourcing using a "fake patient" - a python client script acting as our CGM user emitting random physiological readings every 5 seconds which is recieved by our servers through PUT requests. The client side of the doctor primarily issues GET requests to retrieve existing patient data by searching up their name.
+GlucoRAFT is a Python implementation of the RAFT algorithm for running servers that connect Type 1 Diabetes (T1D) patient records with their endocrinologists, providing real-time Continuous Glucose Monitoring (CGM) updates. The project aims to simplify the implementation of RAFT's properties such as leader election, heartbeats, log updation, and replication, making it accessible for those interested in distributed systems and open-source contributions.
 
-This is an effort to help anyone starting with RAFT,Distributed Systems or Open Source contributions in general and most of it is open ended so that PRs can be raised by people reading/practicing this.
+## Getting Started
 
-You can get started by first running the servers in different terminal windows.
-python3 server.py 0 servers.txt
+1. **Clone the repository:**
 
-Any contributions are welcome! I am actively working on this and will accept contributions within 1-2 days. Some possible contributions include:
-TODO: Creating websockets to livesteam the script and show it in a dashboard (HTML + Flask)
-TODO: Extend client.py to send more value fields (percentage of hypo/hyper/in range, age and other patient related information)
-Feel free to propose your own changes or optimize the code!
+   ```bash
+   git clone https://github.com/your_username/GlucoRAFT.git
+   ```
 
-Here's where you can find the original RAFT paper and github.io page for your reference.
+2. **Navigate to the project directory:**
 
-https://raft.github.io/raft.pdf
-https://raft.github.io
+   ```bash
+   cd GlucoRAFT/src/
+   ```
+
+3. **Run servers in different terminal windows:**
+
+   ```bash
+   python3 server.py 0 servers.txt
+   python3 server.py 1 servers.txt
+   python3 server.py 2 servers.txt
+   python3 server.py 3 servers.txt
+   python3 server.py 4 servers.txt
+   ```
+
+4. **Run the automated script to simulate CGM updates:**
+
+   ```bash
+   python3 random_cgm.py
+   ```
+
+5. **Use `client.py` to submit GET or PUT requests:**
+
+   ```bash
+   python3 client.py <ip> <key>
+   python3 client.py <ip> <key> <value>
+   ```
+
+## Contributing
+
+Contributions to GlucoRAFT are welcomed! Here are some ideas for contributions:
+
+- Implement websockets to livestream data and visualize it in a dashboard using HTML and Flask.
+- Extend `client.py` to support additional value fields such as percentage of hypo/hyper/in-range values, patient age, and other relevant patient information.
+- Propose and implement your own optimizations or improvements to the codebase.
+
+## References
+
+- [RAFT Paper](https://raft.github.io/raft.pdf)
+- [RAFT GitHub Page](https://raft.github.io)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
