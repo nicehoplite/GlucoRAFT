@@ -1,6 +1,6 @@
 # GlucoRAFT
 
-GlucoRAFT is a Python implementation of the RAFT algorithm for running servers that connect Type 1 Diabetes (T1D) patient records with their endocrinologists, providing real-time Continuous Glucose Monitoring (CGM) updates. The project aims to simplify the implementation of RAFT's properties such as leader election, heartbeats, log updation, and replication, making it accessible for those interested in distributed systems and open-source contributions.
+GlucoRAFT is a Python implementation of the RAFT algorithm for running servers that connect Type 1 Diabetes (T1D) patient records with their endocrinologists, providing real-time Continuous Glucose Monitoring (CGM) updates. This is simple usecase demonstration to implement Raft and NOT INTENDED FOR USAGE IN REAL LIFE. The project aims to simplify the implementation of RAFT's properties such as leader election, heartbeats, log updation, and replication, making it accessible for those interested in distributed systems and open-source contributions.
 
 
 ![System Design](res/process.png)
